@@ -71,3 +71,6 @@ ALTER TABLE SchedulerVO CHANGE stopDate  stopTime  timestamp NULL DEFAULT NULL;
 UPDATE SchedulerVO SET stopTime = NULL;
 
 ALTER TABLE `zstack`.`BackupStorageEO` add column importImageInfo bool default false;
+DROP VIEW IF EXISTS `zstack`.`BackupStorageVO`;
+CREATE VIEW `zstack`.`BackupStorageVO` AS SELECT uuid, name, url, description, totalCapacity, availableCapacity, type, state, status, importImageInfo, createDate, lastOpDate FROM `zstack`.`BackupStorageEO` WHERE deleted IS NULL;
+
