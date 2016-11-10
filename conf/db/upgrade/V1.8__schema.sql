@@ -100,5 +100,3 @@ CREATE TABLE `zstack`.`IPsecPeerCidrVO` (
     `createDate` timestamp,
     PRIMARY KEY  (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
